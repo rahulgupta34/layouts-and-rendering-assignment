@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center m-3">Products</h1>
+
+<div id="products">
+    <% if current_user.role == "admin" %>
+        <%= render "products/product", product: @products %>
+    <% else %>
+    <%= render plain: "You Are Not Admin" %>
+    <% end %>
+</div>
+
+

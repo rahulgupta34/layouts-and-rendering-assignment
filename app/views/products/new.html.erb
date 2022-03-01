@@ -1,0 +1,13 @@
+<h1 class="text-center mt-5">New product</h1>
+
+<% if current_user.role == "admin" %>
+         <%= render "form", product: @product %>
+  <% else %>
+  <%= render plain: "You Are Not Admin" %>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to products", products_path, class:"btn btn-success" %>
+</div>
